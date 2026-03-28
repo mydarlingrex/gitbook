@@ -3,7 +3,7 @@ import { isAIChatEnabled } from '@/components/utils/isAIChatEnabled';
 import type { GitBookSiteContext } from '@/lib/context';
 import type { AncestorRevisionPage } from '@/lib/pages';
 import { tcls } from '@/lib/tailwind';
-import { type RevisionPageDocument, SiteVisibility } from '@gitbook/api';
+import type { RevisionPageDocument } from '@gitbook/api';
 import { Icon } from '@gitbook/icons';
 import { PageIcon } from '../PageIcon';
 import { StyledLink } from '../primitives';
@@ -22,11 +22,17 @@ export async function PageHeader(props: {
 
     const withAIChat = isAIChatEnabled(context);
 
+    const pageActions = context.customization.pageActions ?? {
+        // TODO: After 25/07/2025, we can remove this default values as the cache will be updated
+        markdown: true,
+        externalAI: true,
+    };
+
     return (
         <header
             className={tcls(
                 'max-w-3xl',
-                'page-full-width:max-w-screen-2xl',
+                'page-width-wide:max-w-screen-2xl',
                 'mx-auto',
                 'mb-6',
                 'space-y-3',
@@ -34,18 +40,20 @@ export async function PageHeader(props: {
                 'page-api-block:max-w-full'
             )}
         >
-            {page.layout.tableOfContents ? (
+            {page.layout.tableOfContents &&
+            // Show page actions if *any* of the actions are enabled
+            (withAIChat || pageActions.markdown || pageActions.externalAI) ? (
                 <div
                     className={tcls(
-                        'float-right mb-2 ml-4',
-                        ancestors.length > 0 ? '-mt-2' : 'xs:mt-2'
+                        'float-right mb-2 ml-4 xl:max-2xl:page-api-block:mr-58',
+                        ancestors.length > 0 ? '-mt-2' : '-mt-3 xs:mt-2'
                     )}
                 >
                     <AIActionsDropdown
                         markdownPageUrl={`${context.linker.toAbsoluteURL(context.linker.toPathInSpace(page.path))}.md`}
                         withAIChat={withAIChat}
                         trademark={context.customization.trademark.enabled}
-                        withLLMActions={context.site.visibility === SiteVisibility.Public}
+                        actions={pageActions}
                     />
                 </div>
             ) : null}

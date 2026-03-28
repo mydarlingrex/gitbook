@@ -89,13 +89,13 @@ export async function PageCover(props: {
                           'lg:-ml-12',
                           !page.layout.tableOfContents &&
                           context.customization.header.preset !== 'none'
-                              ? 'xl:-ml-[19rem]'
+                              ? 'xl:-ml-76'
                               : null,
                       ]
                     : [
                           'sm:mx-auto',
                           'max-w-3xl ',
-                          'page-full-width:max-w-screen-2xl',
+                          'page-width-wide:max-w-screen-2xl',
                           'sm:rounded-md',
                           'mb-8',
                       ]

@@ -8,37 +8,34 @@ export const ButtonStyles = [
     'gap-2',
     'rounded-md',
     'straight-corners:rounded-none',
-    'circular-corners:rounded-full',
+    'circular-corners:rounded-3xl',
 
     'border',
     'border-tint',
     'hover:border-tint-hover',
 
-    'depth-subtle:shadow-sm',
-    'depth-subtle:hover:shadow-md',
-    'depth-subtle:focus-visible:shadow-md',
+    'depth-subtle:shadow-xs',
+    'hover:depth-subtle:shadow-md',
+    'focus-visible:depth-subtle:shadow-md',
     'active:shadow-none',
-    'shadow-tint',
+    'shadow-tint/6',
     'dark:shadow-tint-1',
 
     'contrast-more:border-tint-12',
     'contrast-more:hover:border-2',
     'contrast-more:hover:border-tint-12',
 
-    'depth-subtle:hover:-translate-y-px',
-    'depth-subtle:focus-visible:-translate-y-px',
+    'hover:depth-subtle:-translate-y-px',
+    'focus-visible:depth-subtle:-translate-y-px',
     'transition-all',
 
     'grow-0',
     'shrink-0',
     'truncate',
 
-    'disabled:opacity-50',
     'disabled:cursor-not-allowed',
-    'disabled:bg-tint',
-    'disabled:text-tint/8',
-    'disabled:shadow-none',
-    'disabled:hover:scale-100',
+    'disabled:translate-y-0!',
+    'disabled:shadow-none!',
 ] as ClassValue[];
 
 export const CardStyles = [
@@ -50,7 +47,7 @@ export const CardStyles = [
     'gap-4',
     'ring-1',
     'ring-tint-subtle',
-    'rounded',
+    'rounded-sm',
     'straight-corners:rounded-none',
     'circular-corners:rounded-2xl',
     'px-5',
@@ -67,13 +64,13 @@ export const LinkStyles = [
 
     'links-default:decoration-primary/6',
     'links-default:text-primary-subtle',
-    'links-default:hover:text-primary-strong',
-    'links-default:contrast-more:text-primary',
-    'links-default:contrast-more:hover:text-primary-strong',
+    'hover:links-default:text-primary-strong',
+    'contrast-more:links-default:text-primary',
+    'contrast-more:hover:links-default:text-primary-strong',
 
     'links-accent:decoration-primary-subtle',
-    'links-accent:hover:decoration-[3px]',
-    'links-accent:hover:[text-decoration-skip-ink:none]',
+    'hover:links-accent:decoration-[3px]',
+    'hover:links-accent:[text-decoration-skip-ink:none]',
 
     'transition-all',
     'duration-100',

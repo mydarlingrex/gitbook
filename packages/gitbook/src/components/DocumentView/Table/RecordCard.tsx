@@ -50,26 +50,26 @@ export async function RecordCard(
                 'bg-tint-base',
                 'w-[calc(100%+2px)]',
                 'h-[calc(100%+2px)]',
-                'inset-[-1px]',
-                'rounded',
+                '-inset-px',
+                'rounded-sm',
                 'straight-corners:rounded-none',
                 'circular-corners:rounded-xl',
                 'overflow-hidden',
                 '[&_.heading>div:first-child]:hidden',
                 '[&_.heading>div]:text-[.8em]',
                 'md:[&_.heading>div]:text-[1em]',
-                '[&_.blocks:first-child_.heading:first-child_div]:mt-0', // Remove margin on first heading in card
+                '[&_.blocks:first-child_.heading]:pt-0', // Remove padding-top on first heading in card
 
                 // On mobile, check if we can display the cover responsively or not:
                 // - If the file has a landscape aspect ratio, we display it normally
                 // - If the file is square or portrait, we display it left with 40% of the card width
                 coverIsSquareOrPortrait
                     ? [
-                          'grid-cols-[40%,_1fr]',
+                          'grid-cols-[40%__1fr]',
                           'min-[432px]:grid-cols-none',
-                          'min-[432px]:grid-rows-[auto,1fr]',
+                          'min-[432px]:grid-rows-[auto_1fr]',
                       ]
-                    : 'grid-rows-[auto,1fr]'
+                    : 'grid-rows-[auto_1fr]'
             )}
         >
             {cover ? (

@@ -58,6 +58,7 @@ export function SpaceLayout(props: {
                     aiMode={aiMode}
                     isMultiVariants={siteSpaces.length > 1}
                     spaceTitle={siteSpace.title}
+                    spaceId={siteSpace.space.id}
                 />
             </React.Suspense>
             {aiMode === CustomizationAIMode.Assistant ? (
@@ -97,7 +98,7 @@ export function SpaceLayout(props: {
                                     'flex-col',
                                     'lg:flex-row',
                                     CONTAINER_STYLE,
-                                    'site-full-width:max-w-full',
+                                    'site-width-wide:max-w-full',
 
                                     // Ensure the footer is display below the viewport even if the content is not enough
                                     withFooter && 'min-h-[calc(100vh-64px)]',
@@ -144,7 +145,7 @@ export function SpaceLayout(props: {
                                                     className={tcls(
                                                         'w-full',
                                                         'page-no-toc:hidden',
-                                                        'site-header-none:page-no-toc:flex'
+                                                        'page-no-toc:site-header-none:flex'
                                                     )}
                                                 />
                                             )}

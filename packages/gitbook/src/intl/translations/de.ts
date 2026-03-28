@@ -32,6 +32,8 @@ export const de = {
     was_this_helpful_negative: 'Nein',
     was_this_helpful_thank_you: 'Danke!',
     was_this_helpful_comment: 'Möchten Sie etwas hinzufügen?',
+    was_this_helpful_positive_label: 'Hilfreich',
+    was_this_helpful_negative_label: 'Nicht hilfreich',
     submit: 'Absenden',
     annotation_button_label: 'Kommentar öffnen',
     code_copied: 'Kopiert!',
@@ -47,6 +49,8 @@ export const de = {
     view: 'Anzeigen',
     edit_on_git: 'Bearbeiten auf ${1}',
     notfound_title: 'Seite nicht gefunden',
+    notfound_link:
+        'Dieser Link verweist auf eine Seite, die entfernt wurde oder nicht mehr existiert.',
     notfound: 'Die gesuchte Seite existiert nicht.',
     unexpected_error_title: 'Ein Fehler ist aufgetreten',
     unexpected_error:
@@ -84,8 +88,9 @@ export const de = {
     ai_chat_context_info_provided_by_the_site: 'Von der Website bereitgestellte Informationen',
     ai_chat_context_previous_messages: 'Vorherige Nachrichten',
     ai_chat_context_disclaimer: 'KI-Antworten können Fehler enthalten.',
-    ai_chat_input_placeholder: 'Fragen, suchen oder Aktion ausführen...',
+    ai_chat_input_placeholder: 'Fragen, suchen oder erklären...',
     send: 'Senden',
+    actions: 'Aktionen',
     ai_chat_suggested_questions_title: 'Vorgeschlagene Fragen',
     ai_chat_suggested_questions_about_this_page: 'Worum geht es auf dieser Seite?',
     ai_chat_suggested_questions_read_next: 'Was sollte ich als nächstes lesen?',
